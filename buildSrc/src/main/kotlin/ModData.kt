@@ -1,8 +1,8 @@
 object ModData {
-  const val group = "com.example"
-  const val id = "examplemod"
+  const val group = "dev.mim1q"
+  const val id = "runtimedatagen"
   const val version = "0.0.1"
   const val versionType = "alpha"
-  val mcVersions = listOf("1.19", "1.19.1", "1.19.2")
+  val mcVersions = listOf<String>()
   val dependencies = listOf("fabric-api")
 }

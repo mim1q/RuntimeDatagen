@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "runtimedatagen",
+  "version": "${version}",
+  "name": "Runtime Datagen",
+  "description": "Ugly but functional datagen reloading during runtime, from inside your world.",
+  "authors": [
+    "Mim1q"
+  ],
+  "contact": {},
+  "license": "CC0",
+  "icon": "assets/runtimedatagen/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.mim1q.runtimedatagen.RuntimeDatagenClient"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+  },
+  "custom": {
+  }
+}
