@@ -6,19 +6,7 @@ The mod's functionality is only enabled when you are in a development environmen
 
 ## Installation
 
-You have two options:
-
 - Install the mod manually from [GitHub Releases](https://github.com/Mim1q/RuntimeDatagen/releases)
-- Add the mod as a development-only dependency in your gradle file:
-```kotlin
-repositories {
-    maven("https://maven.mim1q.dev") // Mim1q's Maven
-}
-
-dependencies {
-    modLocalRuntime("dev.mim1q:runtimedatagen:0.0.1")
-}
-```
 
 ## Usage
 
@@ -26,6 +14,7 @@ This mod makes a few assumptions about the environment:
 - your mod must have its generated resources in `src/main/generated/` or a similar path, relative to your `gradlew` file;
 - you must have the `fabric-api.datagen.output-dir` property set in your Minecraft Client configuration
   (This may just  be copied from the Data Generation configuration).
+- you have reloaded your sources in case you've changed anything 
 
 After that is done, **press the O key** while in-world (configurable under Key Bind settings), and let the mod do its job :)
 
