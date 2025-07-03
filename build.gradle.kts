@@ -23,8 +23,8 @@ repositories {
 dependencies {
     minecraft("com.mojang:minecraft:${Versions.minecraft}")
     mappings("net.fabricmc:yarn:${Versions.yarn}:v2")
-    modImplementation("net.fabricmc:fabric-loader:${Versions.fabricLoader}")
-    modImplementation("net.fabricmc.fabric-api:fabric-api:${Versions.fabricApi}")
+    modCompileOnly("net.fabricmc:fabric-loader:${Versions.fabricLoader}")
+    modCompileOnly("net.fabricmc.fabric-api:fabric-api:${Versions.fabricApi}")
 }
 
 @Suppress("UnstableApiUsage")
@@ -57,7 +57,6 @@ tasks {
             "gh", "release",
             "create", ModData.version,
             "build/libs/${jarName}.jar",
-            "build/libs/${jarName}-javadoc.jar",
             "build/libs/${jarName}-sources.jar",
             "-t", "Runtime Datagen ${ModData.versionType} ${ModData.version}",
             "-n", changelog,

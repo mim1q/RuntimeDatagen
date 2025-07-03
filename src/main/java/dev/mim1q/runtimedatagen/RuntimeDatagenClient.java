@@ -50,8 +50,9 @@ public class RuntimeDatagenClient implements ClientModInitializer {
               var projectPath = datagenPath.getParent().getParent().getParent();
 
               // Run the gradle processResources task to apply changes to the resources
+              String gradlew = System.getProperty("os.name").toLowerCase().contains("win") ? "gradlew.bat" : "gradlew";
               var process = new ProcessBuilder(
-                projectPath.resolve("gradlew.bat").toAbsolutePath().toString(),
+                projectPath.resolve(gradlew).toAbsolutePath().toString(),
                 "processResources"
               )
                 .directory(projectPath.toFile())
@@ -65,6 +66,11 @@ public class RuntimeDatagenClient implements ClientModInitializer {
               MinecraftClient.getInstance().reloadResourcesConcurrently().thenAccept(_x -> {
                 MinecraftClient.getInstance().player.sendMessage(Text.of("Datagen finished successfully"), true);
               });
+              var server = MinecraftClient.getInstance().getServer();
+              if (server != null) {
+                server.reloadResources(server.getDataPackManager().getEnabledNames());
+              }
+
             } catch (Exception e) {
               MinecraftClient.getInstance().player.sendMessage(Text.of("Datagen failed"), true);
               throw new RuntimeException(e);
