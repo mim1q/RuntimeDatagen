@@ -6,7 +6,18 @@ The mod's functionality is only enabled when you are in a development environmen
 
 ## Installation
 
-- Install the mod manually from [GitHub Releases](https://github.com/Mim1q/RuntimeDatagen/releases)
+You have two options, either:
+1. Install the mod manually from [GitHub Releases](https://github.com/Mim1q/RuntimeDatagen/releases)
+2. Add the mod as a development-only dependency in your gradle file:
+```kotlin
+repositories {
+  maven("https://maven.mim1q.dev")
+}
+
+dependencies {
+  modLocalRuntime("dev.mim1q:runtimedatagen:0.0.2")
+}
+```
 
 ## Usage
 
