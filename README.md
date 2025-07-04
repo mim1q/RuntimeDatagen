@@ -33,4 +33,4 @@ After that is done, **press the O key** while in-world (configurable under Key B
 
 In case this mod gets flagged as malicious due to its usage of reflection and process spawning, feel free to verify the 
 code in [the main class](src/main/java/dev/mim1q/runtimedatagen/RuntimeDatagenClient.java), compile it yourself or 
-incorporate it into your own project (CC0 license).
+incorporate it into your own project (CC0 license - attribution not required, but appreciated :blush:).
